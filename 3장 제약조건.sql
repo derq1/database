@@ -16,7 +16,7 @@ INSERT INTO `User2` VALUES ('A102', '김춘추', '1972-11-23', '경남 경주시
 INSERT INTO `User2` VALUES ('A103', '장보고', '1978-03-01', '전남 완도군');
 INSERT INTO `User2` VALUES ('A105', '강감찬', '1979-08-16', '서울시 관악구');
 INSERT INTO `User2` VALUES ('A106', '이순신', '1981-05-23', '부산시 진구');
-INSERT INTO `User2` VALUES ('A101', '정약용', '1981-05-23', '부산시 진구');
+INSERT INTO `User2` VALUES ('A101', '정약용', '1981-05-23', '부산시 진구'); #중복되어 안들어감
 
 #실습 3-3 고유키 실습하기
 CREATE TABLE `User3` (
@@ -31,17 +31,20 @@ CREATE TABLE `User3` (
 INSERT INTO `User3` VALUES ('A101', '김유신', '1968-05-09', '010-1234-1001', '경남 김해시');
 INSERT INTO `User3` VALUES ('A102', '김춘추', '1972-11-23', '010-1234-1002', '경남 경주시');
 INSERT INTO `User3` VALUES ('A103', '장보고', '1978-03-01', '010-1234-1003', '전남 완도군');
-INSERT INTO `User3` VALUES ('A105', '강감찬', '1979-08-16', '010-1234-1004','서울시 관악구');
-INSERT INTO `User3` VALUES ('A106', '이순신', '1981-05-23', '010-1234-1005', '부산시 진구');
-INSERT INTO `User3` VALUES ('A101', '정약용', '1981-05-23',  null, '부산시 진구');
+INSERT INTO `User3` VALUES ('A104', '강감찬', '1979-08-16', '010-1234-1004','서울시 관악구');
+INSERT INTO `User3` VALUES ('A105', '이순신', '1981-05-23', '010-1234-1005', '부산시 진구');
+INSERT INTO `User3` VALUES ('A106', '정약용', '1981-05-23',  null, '부산시 진구');
 
 #실습 3-5 왜래키 실습하기
+# 부모테이블
 CREATE TABLE `Parent` (
 `pid` VARCHAR(10) PRIMARY KEY,
 `name` varchar(10), 
 `birth` char(10),
 `addr` varchar(100)
 );
+
+# 자식테이블
 CREATE TABLE `Child` (
 `cid` VARCHAR(10) PRIMARY KEY,
 `name` VARCHAR(10),
